@@ -26,8 +26,8 @@ const ParticlesContainer = () => {
         interactivity: {
           events: {
             onClick: {
-              enable: false,
-              mode: 'push',
+              enable: true,
+              mode: 'pull',
             },
             onHover: {
               enable: true,

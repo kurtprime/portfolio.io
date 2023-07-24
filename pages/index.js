@@ -37,10 +37,12 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae hic
-            enim repudiandae sapiente tempora maxime similique fugiat aliquam
-            soluta, ullam quam nesciunt distinctio quia tenetur eius ipsam
-            reiciendis! Vel, nobis!
+            I am driven by a profound passion for coding, rooted in a strong
+            belief in consistency and discipline. As a young and aspiring
+            developer, I am dedicated to building a beautiful future through web
+            development, where I can effectively showcase my technical skills
+            and abilities to empower companies in need of innovative coding
+            solutions.
           </motion.p>
           {/* btn */}
           <div className="flex justify-center xl:hidden relative ">
