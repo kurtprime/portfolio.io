@@ -1,4 +1,4 @@
-import React, { UseState, useState } from 'react';
+import React, { useState } from 'react';
 
 //icons
 import {
