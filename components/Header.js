@@ -18,7 +18,7 @@ const Header = () => {
         <div className="flex flex-col lg:flex-row justify-between items-center  py-0">
           {/* logo */}
           <Link href={'/'}>
-            <h1 className="text-[35px] md:text-[50px] mb-8 font-semibold ">
+            <h1 className="text-[30px] md:text-[50px] whitespace-nowrap flex-nowrap mb-8 font-semibold ">
               kurt ivan{' '}
               <span className="text-white/60 font-thin">quejada.</span>
             </h1>

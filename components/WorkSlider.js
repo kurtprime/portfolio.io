@@ -4,40 +4,49 @@ export const workSlides = {
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb1.jpg',
+          title: 'portfolio',
+          path: '/image-1.png',
+          url: 'https://portfolio-io-three.vercel.app/',
         },
         {
-          title: 'title',
-          path: '/thumb2.jpg',
+          title: 'React news',
+          path: '/image-2.png',
+          url: 'https://adorable-yeot-a7b9e0.netlify.app/',
         },
         {
-          title: 'title',
-          path: '/thumb3.jpg',
+          title: 'Newspaper',
+          path: '/image-3.png',
+          url: ' https://kurtprime.github.io/NewsPaper/',
         },
         {
-          title: 'title',
-          path: '/thumb4.jpg',
+          title: 'resume',
+          path: '/image-5.png',
+          url: 'https://blog-site-kurt.netlify.app/',
         },
       ],
     },
+
     {
       images: [
         {
-          title: 'title',
-          path: '/thumb4.jpg',
+          title: 'blog-post',
+          path: '/image-5.png',
+          url: 'https://github.com/kurtprime/Blog-Site',
         },
         {
           title: 'title',
-          path: '/thumb1.jpg',
+          path: '/image1.png',
+          url: 'https://github.com/kurtprime/portfolio.io',
         },
         {
           title: 'title',
-          path: '/thumb2.jpg',
+          path: '/image2.png',
+          url: 'https://github.com/kurtprime/News-Article.io',
         },
         {
           title: 'title',
-          path: '/thumb3.jpg',
+          path: '/image3.png',
+          url: 'https://github.com/kurtprime/NewsPaper',
         },
       ],
     },
@@ -47,96 +56,81 @@ export const workSlides = {
 //import swiper react components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+//nex image
+import Image from 'next/image';
+
+//next link
+import Link from 'next/link';
+
 //swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
 //import required modules
-import { FreeMode, Pagination } from 'swiper';
+import { Pagination } from 'swiper';
 
 //icons
-import {
-  RxCode,
-  RxPencil2,
-  RxDesktop,
-  RxReader,
-  RxRocket,
-  RxArrowTopRight,
-  RxLink1,
-} from 'react-icons/rx';
-import { DiResponsive } from 'react-icons/di';
-// data
-const serviceData = [
-  {
-    icon: <RxCode />,
-    title: 'Website Development',
-    description:
-      'Can create static or dynamic websites from scratch using HTML, CSS, and JavaScript',
-  },
-  {
-    icon: <RxPencil2 />,
-    title: 'User Interface (UI) Design',
-    description:
-      'Collaborate with designers to create visually stunning and intuitive user interfaces',
-  },
-  {
-    icon: <RxDesktop />,
-    title: 'Performance Optimization',
-    description:
-      'Optimize the front-end code for speed and efficiency to reduce loading times',
-  },
-  {
-    icon: <RxLink1 />,
-    title: 'Website Maintenance',
-    description:
-      'Provide ongoing updates to keep the web application running smoothly',
-  },
-  {
-    icon: <DiResponsive />,
-    title: 'Responsive Web Design',
-    description:
-      'Create layouts that adapt to different screen sizes and devices',
-  },
-];
+import { BsArrowRight } from 'react-icons/bs';
 
 const Work = () => {
   return (
     <Swiper
-      breakpoints={{
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 15,
-        },
-        640: {
-          slidesPerView: 3,
-          spaceBetween: 15,
-        },
-      }}
-      freeMode={true}
+      spaceBetween={10}
       pagination={{
         clickable: true,
       }}
-      modules={[FreeMode, Pagination]}
-      className="h-[240px] sm:h-[340px] "
+      modules={[Pagination]}
+      className="h-[280px] sm:h-[480px] "
     >
-      {serviceData.map((item, itemIndex) => {
+      {workSlides.slides.map((slide, itemIndex) => {
         return (
           <SwiperSlide key={itemIndex}>
-            <div className="bg-[rgba(64,47,123,0.15)] h-max rounded-lg px-6 py-8 flex sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300 ">
-              {/* icons */}
-              <div className="text-4xl text-accent mb-4">{item.icon}</div>
-              {/* title and description */}
-              <div className="mb-8 ">
-                <div className="mb-2 text-lg">{item.title}</div>
-                <p className="max-w-[350px] leading-normal ">
-                  {item.description}
-                </p>
-              </div>
-              {/* arrow */}
-              <div className="text-3xl">
-                <RxArrowTopRight className="group-hover:rotate-45 group-hover:text-accent transition-all duration-300 " />
-              </div>
+            <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer">
+              {slide.images.map((image, index) => (
+                <div
+                  className="relative rounded-lg overflow-hidden flex items-center group justify-center"
+                  key={index}
+                >
+                  <div className="flex items-center justify-center relative overflow-hidden group">
+                    {/* image */}
+                    <div className="relative w-[500px] h-[210px]">
+                      <Image
+                        src={image.path}
+                        fill
+                        alt=""
+                        sizes="100wh"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* overlay gradient */}
+                    <Link
+                      target="_blank"
+                      href={image.url}
+                      className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 trnasition-all duration-700 "
+                    ></Link>
+                    {/* title */}
+                    <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10  group-hover:xl:-translate-y-20 transition-all duration-300">
+                      <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2rem] ">
+                        {/* title part 1  */}
+                        <div className="deley-100">
+                          {' '}
+                          {itemIndex == 1 ? 'Github' : 'Live'}
+                        </div>
+                        {/* title part 2  */}
+                        <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 deley-150 ">
+                          {itemIndex == 1 ? 'Repository' : 'Project'}
+                        </div>
+                        {/* icon */}
+                        <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 deley-300 ">
+                          <BsArrowRight />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </SwiperSlide>
         );

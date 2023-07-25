@@ -46,7 +46,7 @@ const aboutData = [
     title: 'credentials',
     info: [
       {
-        title: 'Certicate of Admission for Refocus Web development',
+        title: 'Certificate of Admission for Refocus Web development',
         stage: '2023',
       },
     ],
@@ -119,7 +119,7 @@ const About = () => {
                   <Countup start={-1} end={1} duration={10} /> +
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Years of Experince
+                  Years of Experience
                 </div>
               </div>
               {/* clients */}
