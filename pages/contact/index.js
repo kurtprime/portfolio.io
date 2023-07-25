@@ -1,6 +1,10 @@
 //component
 import Circles from '../../components/Circles';
 
+//emailJs
+import React, { useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
+
 //icons
 import { BsArrowRight } from 'react-icons/bs';
 
@@ -11,6 +15,40 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 
 const Contact = () => {
+  const [text, setText] = useState('');
+  const [gmail, setGmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [massage, setMassage] = useState('');
+
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setText('');
+    setGmail('');
+    setSubject('');
+    setMassage('');
+
+    emailjs
+      .sendForm(
+        'service_14by2v4',
+        'template_zj82vmk',
+        form.current,
+        'HAXxEwOWshEki8RqX'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          console.log('sent');
+          alert('massage has been sent');
+        },
+        (error) => {
+          console.log(error.text);
+          console.log('not sent');
+          alert('failed to sent the massage');
+        }
+      );
+  };
+
   return (
     <div className="h-full bg-primary/30">
       <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
@@ -28,6 +66,8 @@ const Contact = () => {
           </motion.h2>
           {/* form */}
           <motion.form
+            ref={form}
+            onSubmit={sendEmail}
             variants={fadeIn('up', 0.4)}
             initial="hidden"
             animate="show"
@@ -36,13 +76,40 @@ const Contact = () => {
           >
             {/* input group */}
             <div className="flex gap-x-6 w-full">
-              <input type="text" placeholder="name" className="input" />
-              <input type="email" placeholder="email" className="input" />
+              <input
+                type="text"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                placeholder="name"
+                className="input"
+                name="from_name"
+              />
+              <input
+                onChange={(e) => setGmail(e.target.value)}
+                value={gmail}
+                type="email"
+                placeholder="email"
+                className="input"
+                name="email"
+              />
             </div>
-            <input type="text" placeholder="subject" className="input" />
-            <textarea placeholder="message" className="textarea"></textarea>
+            <input
+              onChange={(e) => setSubject(e.target.value)}
+              value={subject}
+              type="text"
+              placeholder="subject"
+              className="input"
+              name="subject"
+            />
+            <textarea
+              onChange={(e) => setMassage(e.target.value)}
+              value={massage}
+              placeholder="message"
+              className="textarea"
+              name="message"
+            ></textarea>
             <button
-              onClick={(e) => e.preventDefault()}
+              type="submit"
               className="btn rounded-full border border-white/50  max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group "
             >
               <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500 ">
