@@ -35,7 +35,7 @@ export const workSlides = {
         },
         {
           title: 'title',
-          path: '/image1.png',
+          path: '/image-1.png',
           url: 'https://github.com/kurtprime/portfolio.io',
         },
         {
