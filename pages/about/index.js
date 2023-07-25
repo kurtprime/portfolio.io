@@ -87,7 +87,7 @@ const About = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h2"
+            className="h2 z-10"
           >
             I code my <span className="text-accent"> dreams into reality</span>,
             unlocking endless possibilities in the digital realm.
@@ -97,7 +97,7 @@ const About = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-[500] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px0"
+            className="max-w-[500] z-10 mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px0"
           >
             As an aspiring young web developer, this portfolio reflects my
             months of dedicated learning and practice. With valuable skills and
@@ -110,7 +110,7 @@ const About = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb8"
+            className="hidden md:flex md:max-w-xl z-10 xl:max-w-none mx-auto xl:mx-0 mb8"
           >
             <div className="flex flex-1 xl:gap-x-6">
               {/* experience */}
