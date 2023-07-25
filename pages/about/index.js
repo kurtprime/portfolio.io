@@ -101,7 +101,7 @@ const About = () => {
           >
             As an aspiring young web developer, this portfolio reflects my
             months of dedicated learning and practice. With valuable skills and
-            unwavering determination, I'm eager to contribute and elevate your
+            unwavering determination, I am eager to contribute and elevate your
             company, despite being a junior developer
           </motion.p>
           {/* counters */}
