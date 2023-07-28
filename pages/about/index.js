@@ -67,7 +67,7 @@ import { fadeIn } from '../../variants';
 const About = () => {
   const [index, setIndex] = useState(0);
   return (
-    <div className="h-full bg-primary/30 py-32 mb-[250px] text-center xl:text-left">
+    <div className="h-full relative overflow-hidden  bg-primary/30 py-32  text-center xl:text-left">
       <Circles />
       {/* avatar img */}
       <motion.div
@@ -79,7 +79,7 @@ const About = () => {
       >
         <Avatar />
       </motion.div>
-      <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6 ">
+      <div className="container mx-auto h-full overflow-y-auto flex flex-col items-center xl:flex-row gap-x-6 ">
         {/* text */}
         <div className="flex-1 flex flex-col justify-center">
           <motion.h2

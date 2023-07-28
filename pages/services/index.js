@@ -9,10 +9,10 @@ import { fadeIn } from '../../variants';
 
 const Services = () => {
   return (
-    <div className="h-full bg-primary/30 py-[200px] flex items-center">
+    <div className="h-full overflow-x-hidden  overflow-y-auto relative bg-primary/30 py-[100px] lg:py-[200px] flex items-center">
       <Circles />
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-x-8">
+        <div className="flex flex-col xl:flex-row pt-[100px] gap-x-8">
           {/* text */}
           <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0 ">
             <motion.h2
@@ -29,7 +29,7 @@ const Services = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="mb-4 max-w-[400px] mx-auto lg:mx-0  "
+              className="mb-4 max-w-[400px] mx-auto text-sm lg:text-xs lg:mx-0  "
             >
               As a front-end developer, I play a crucial role in bringing
               designs to life and creating seamless user experiences. My
