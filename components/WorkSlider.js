@@ -94,7 +94,7 @@ const Work = () => {
                 >
                   <div className="flex items-center justify-center relative overflow-hidden group">
                     {/* image */}
-                    <div className="relative w-[500px] h-[210px]">
+                    <div className="relative md:w-[500px] md:h-[210px]  w-[300px] h-[122px] ">
                       <Image
                         src={image.path}
                         fill
@@ -105,11 +105,11 @@ const Work = () => {
                     </div>
 
                     {/* overlay gradient */}
-                    <Link
+                    <a
                       target="_blank"
                       href={image.url}
                       className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 trnasition-all duration-700 "
-                    ></Link>
+                    ></a>
                     {/* title */}
                     <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10  group-hover:xl:-translate-y-20 transition-all duration-300">
                       <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2rem] ">
