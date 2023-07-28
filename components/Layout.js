@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div
-        className={`page bg-site text-white min-h-screen overflow-auto bg-cover bg-no-repeat ${sora.variable} font-sora`}
+        className={`page bg-site text-white h-screen overflow-auto bg-cover bg-no-repeat ${sora.variable} font-sora relative`}
       >
         <TopleftImg />
         <Nav />
